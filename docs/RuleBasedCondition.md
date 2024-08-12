@@ -1,0 +1,12 @@
+# RuleBasedCondition
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**type** | **str** | This condition is based on a strict rule. | 
+**operator** | **str** | This is the operator you want to use to compare the left side and right side.  The operation becomes &#x60;(leftSide) operator (rightSide)&#x60;. | 
+**left_side** | **str** | This is the left side of the operation.  You can reference any variable in the context of the current block execution (step): - \&quot;{{output.your-property-name}}\&quot; for current step&#x27;s output - \&quot;{{input.your-property-name}}\&quot; for current step&#x27;s input - \&quot;{{your-step-name.output.your-property-name}}\&quot; for another step&#x27;s output (in the same workflow) - \&quot;{{your-step-name.input.your-property-name}}\&quot; for another step&#x27;s input (in the same workflow) - \&quot;{{workflow.input.your-property-name}}\&quot; for the current workflow&#x27;s input - \&quot;{{global.your-property-name}}\&quot; for the global context  Or, you can use a constant: - \&quot;1\&quot; - \&quot;text\&quot; - \&quot;true\&quot; - \&quot;false\&quot;  Or, you can mix and match with string interpolation: - \&quot;{{your-property-name}}-{{input.your-property-name-2}}-1\&quot; | 
+**right_side** | **str** | This is the right side of the operation.  You can reference any variable in the context of the current block execution (step): - \&quot;{{output.your-property-name}}\&quot; for current step&#x27;s output - \&quot;{{input.your-property-name}}\&quot; for current step&#x27;s input - \&quot;{{your-step-name.output.your-property-name}}\&quot; for another step&#x27;s output (in the same workflow) - \&quot;{{your-step-name.input.your-property-name}}\&quot; for another step&#x27;s input (in the same workflow) - \&quot;{{workflow.input.your-property-name}}\&quot; for the current workflow&#x27;s input - \&quot;{{global.your-property-name}}\&quot; for the global context  Or, you can use a constant: - \&quot;1\&quot; - \&quot;text\&quot; - \&quot;true\&quot; - \&quot;false\&quot;  Or, you can mix and match with string interpolation: - \&quot;{{your-property-name}}-{{input.your-property-name-2}}-1\&quot; | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

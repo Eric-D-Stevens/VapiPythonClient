@@ -1,0 +1,14 @@
+# CallbackStep
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**block** | **OneOfCallbackStepBlock** | This is the block to use. To use an existing block, use &#x60;blockId&#x60;. | [optional] 
+**type** | **str** | This is a step that calls back to the previous step after it&#x27;s done. This effectively means we&#x27;re spawning a new conversation thread. The previous conversation thread will resume where it left off once this step is done.  Use case: - You are collecting a customer&#x27;s order and while they were on one item, they start a new item or try to modify a previous one. You would make a OrderUpdate block which calls the same block repeatedly when a new update starts. | 
+**mutations** | **list[OneOfCallbackStepMutationsItems]** | This is the mutations to apply to the context after the step is done. | [optional] 
+**name** | **str** | This is the name of the step. | 
+**block_id** | **str** | This is the id of the block to use. To use a transient block, use &#x60;block&#x60;. | [optional] 
+**input** | **object** | This is the input to the block. You can use any key-value map as input to the block.  Example: {   \&quot;name\&quot;: \&quot;John Doe\&quot;,   \&quot;age\&quot;: 20 }  You can reference any variable in the context of the current block: - \&quot;{{your-step-name.output.your-property-name}}\&quot; for another step&#x27;s output (in the same workflow) - \&quot;{{your-step-name.input.your-property-name}}\&quot; for another step&#x27;s input (in the same workflow) - \&quot;{{workflow.input.your-property-name}}\&quot; for the current workflow&#x27;s input - \&quot;{{global.your-property-name}}\&quot; for the global context  Example: {   \&quot;name\&quot;: \&quot;{{my-tool-call-step.output.name}}\&quot;,   \&quot;age\&quot;: \&quot;{{my-tool-call-step.input.age}}\&quot;,   \&quot;date\&quot;: \&quot;{{workflow.input.date}}\&quot; }  You can dynamically change the key name.  Example: {   \&quot;{{my-tool-call-step.output.key-name-for-name}}\&quot;: \&quot;{{name}}\&quot;,   \&quot;{{my-tool-call-step.input.key-name-for-age}}\&quot;: \&quot;{{age}}\&quot;,   \&quot;{{workflow.input.key-name-for-date}}\&quot;: \&quot;{{date}}\&quot; }  You can represent the value as a string, number, boolean, array, or object.  Example: {   \&quot;name\&quot;: \&quot;john\&quot;,   \&quot;age\&quot;: 20,   \&quot;date\&quot;: \&quot;2021-01-01\&quot;,   \&quot;metadata\&quot;: {     \&quot;unique-key\&quot;: \&quot;{{my-tool-call-step.output.unique-key}}\&quot;   },   \&quot;array\&quot;: [\&quot;A\&quot;, \&quot;B\&quot;, \&quot;C\&quot;], } | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
